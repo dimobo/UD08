@@ -9,6 +9,34 @@ public class Electrodomestico {
 	private String color;
 	private char consumoEnergetico;
 
+	// Constructor en blanco con todo por defecto.
+	public Electrodomestico() {
+
+		precioBase = precioDEF;
+		peso = pesoDEF;
+		color = colorDEF;
+		consumoEnergetico = consumoDEF;
+
+	}
+
+	// Constructor para precio y peso los demas atributos por defecto.
+	public Electrodomestico(double precioBase, double peso) {
+
+		this.precioBase = precioBase;
+		this.peso = peso;
+
+	}
+
+	// Contructor para todos los atributos.
+	public Electrodomestico(double precioBase, double peso, String color, char consumoEnergetico) {
+
+		this.precioBase = precioBase;
+		this.peso = peso;
+		this.color = color;
+		this.consumoEnergetico = consumoEnergetico;
+
+	}
+
 	// En esta zona estamos indicando los valores por defectos.
 	private char consumoDEF = 'F';
 	private String colorDEF = "blanco";
@@ -71,7 +99,7 @@ public class Electrodomestico {
 	// defecto.
 	public void setColor(String color) {
 
-		if (colorList().contains(color)) {
+		if (colorList().contains(color.toLowerCase())) {
 			this.color = color;
 		} else {
 			this.color = colorDEF;
