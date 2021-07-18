@@ -30,11 +30,16 @@ public class Persona {
 		this.nombre = nombre;
 		this.edad = edad;
 
+		this.dni = "";
+
 		// Para evitar tener código repetido hemos generado un método ComprobarSexo y lo
 		// estamos llamando aquí para que nos mire si nos han introducido un valor o si
 		// se ha introducido un char vació por lo que necesitaremos usar el valor
 		// default.
 		this.sexo = comprobarSexo(sexo);
+
+		this.peso = 0;
+		this.altura = 0;
 
 	}
 
