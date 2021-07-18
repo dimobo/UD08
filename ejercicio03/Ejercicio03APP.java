@@ -1,4 +1,4 @@
-package ejerccicio03;
+package ejercicio03;
 
 public class Ejercicio03APP {
 
