@@ -54,6 +54,7 @@ public class Electrodomestico {
 		}
 	}
 
+	@Override
 	public String toString() {
 
 		String objeto = "Precio del Electrodoméstico: " + this.precioBase + " Peso del Electrodoméstico: " + this.peso
