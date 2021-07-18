@@ -4,10 +4,11 @@ import java.util.ArrayList;
 
 public class Electrodomestico {
 
-	// Atributos del objeto.
-	private double precioBase, peso;
-	private String color;
-	private char consumoEnergetico;
+	// Atributos del objeto, los hemos creado protected por que se han de poder
+	// heredar.
+	protected double precioBase, peso;
+	protected String color;
+	protected char consumoEnergetico;
 
 	// Constructor en blanco con todo por defecto.
 	public Electrodomestico() {
@@ -24,6 +25,8 @@ public class Electrodomestico {
 
 		this.precioBase = precioBase;
 		this.peso = peso;
+		this.color = colorDEF;
+		this.consumoEnergetico = consumoDEF;
 
 	}
 
@@ -32,19 +35,37 @@ public class Electrodomestico {
 
 		this.precioBase = precioBase;
 		this.peso = peso;
-		this.color = color;
-		this.consumoEnergetico = consumoEnergetico;
+
+		if (colorList().contains(color.toLowerCase())) {
+			this.color = color;
+		} else {
+			this.color = colorDEF;
+		}
+
+		if (consumoList().contains(consumoEnergetico)) {
+			this.consumoEnergetico = consumoEnergetico;
+		} else {
+			this.consumoEnergetico = consumoDEF;
+		}
+	}
+
+	public String toString() {
+
+		String objeto = "Precio del Electrodoméstico: " + this.precioBase + " Peso del Electrodoméstico: " + this.peso
+				+ " Color del Electrodoméstico: " + this.color + " Consumo energetico:  " + this.consumoEnergetico;
+
+		return objeto;
 
 	}
 
 	// En esta zona estamos indicando los valores por defectos.
-	private char consumoDEF = 'F';
-	private String colorDEF = "blanco";
-	private double precioDEF = 100.0, pesoDEF = 5.0;
+	protected char consumoDEF = 'F';
+	protected String colorDEF = "blanco";
+	protected double precioDEF = 100.0, pesoDEF = 5.0;
 
 	// Este atributo nos devuelve una lista con lo que serán los parámetros
 	// aceptados para el consumo de los electrodomésticos.
-	private ArrayList<Character> consumoList() {
+	protected ArrayList<Character> consumoList() {
 		ArrayList<Character> consumoList = new ArrayList<Character>();
 
 		consumoList.add('A');
@@ -59,7 +80,7 @@ public class Electrodomestico {
 
 	// Este atributo nos devuelve una lista con lo que serán los parámetros
 	// aceptados para el color de los electrodomésticos.
-	private ArrayList<String> colorList() {
+	protected ArrayList<String> colorList() {
 		ArrayList<String> colorList = new ArrayList<String>();
 
 		colorList.add("blanco");
@@ -71,7 +92,7 @@ public class Electrodomestico {
 		return colorList;
 	}
 
-	// Zona de gets y sets (en este ejercicio hemos modificado un par de sets).
+	// Zona de gets y sets.
 	public double getPrecioBase() {
 		return precioBase;
 	}
@@ -85,43 +106,23 @@ public class Electrodomestico {
 	}
 
 	public void setPeso(double peso) {
-
 		this.peso = peso;
 	}
 
 	public String getColor() {
-
 		return color;
 	}
 
-	// Este set lo hemos modificado un poco para asegurarnos que nos introducen un
-	// valor dentro de los esperados y en caso contrario obtendremos el valor por
-	// defecto.
 	public void setColor(String color) {
-
-		if (colorList().contains(color.toLowerCase())) {
-			this.color = color;
-		} else {
-			this.color = colorDEF;
-		}
-
+		this.color = color;
 	}
 
 	public char getConsumoEnergetico() {
 		return consumoEnergetico;
 	}
 
-	// Este set lo hemos modificado un poco para asegurarnos que nos introducen un
-	// valor dentro de los esperados y en caso contrario obtendremos el valor por
-	// defecto.
 	public void setConsumoEnergetico(char consumoEnergetico) {
-
-		if (consumoList().contains(consumoEnergetico)) {
-			this.consumoEnergetico = consumoEnergetico;
-		} else {
-			this.consumoEnergetico = consumoDEF;
-		}
-
+		this.consumoEnergetico = consumoEnergetico;
 	}
 
 }
