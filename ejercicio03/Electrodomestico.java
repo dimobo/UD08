@@ -9,14 +9,19 @@ public class Electrodomestico {
 	protected double precioBase, peso;
 	protected String color;
 	protected char consumoEnergetico;
+	
+	// En esta zona estamos indicando los valores por defectos.
+	protected final char CONSUMODEF = 'F';
+	protected final String COLORDEF = "blanco";
+	protected final double PRECIODEF = 100.0, PESODEF = 5.0;
 
 	// Constructor en blanco con todo por defecto.
 	public Electrodomestico() {
 
-		precioBase = precioDEF;
-		peso = pesoDEF;
-		color = colorDEF;
-		consumoEnergetico = consumoDEF;
+		precioBase = PRECIODEF;
+		peso = PESODEF;
+		color = COLORDEF;
+		consumoEnergetico = CONSUMODEF;
 
 	}
 
@@ -25,8 +30,8 @@ public class Electrodomestico {
 
 		this.precioBase = precioBase;
 		this.peso = peso;
-		this.color = colorDEF;
-		this.consumoEnergetico = consumoDEF;
+		this.color = COLORDEF;
+		this.consumoEnergetico = CONSUMODEF;
 
 	}
 
@@ -39,13 +44,13 @@ public class Electrodomestico {
 		if (colorList().contains(color.toLowerCase())) {
 			this.color = color;
 		} else {
-			this.color = colorDEF;
+			this.color = COLORDEF;
 		}
 
 		if (consumoList().contains(consumoEnergetico)) {
 			this.consumoEnergetico = consumoEnergetico;
 		} else {
-			this.consumoEnergetico = consumoDEF;
+			this.consumoEnergetico = CONSUMODEF;
 		}
 	}
 
@@ -57,11 +62,6 @@ public class Electrodomestico {
 		return objeto;
 
 	}
-
-	// En esta zona estamos indicando los valores por defectos.
-	protected char consumoDEF = 'F';
-	protected String colorDEF = "blanco";
-	protected double precioDEF = 100.0, pesoDEF = 5.0;
 
 	// Este atributo nos devuelve una lista con lo que serán los parámetros
 	// aceptados para el consumo de los electrodomésticos.
