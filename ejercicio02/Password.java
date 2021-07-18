@@ -13,20 +13,20 @@ public class Password {
 	public Password() {
 
 		longitud = LONGDEF;
-		contraseña = GenerarContraseña(this.longitud);
+		contraseña = generarContraseña(this.longitud);
 
 	}
 
 	// Este es el constructor que se usara en caso de que mandemos el parámetro
 	// longitud.
 	public Password(int longitud) {
-		this.longitud = ComprobarLongitud(longitud);
-		this.contraseña = GenerarContraseña(this.longitud);
+		this.longitud = comprobarLongitud(longitud);
+		this.contraseña = generarContraseña(this.longitud);
 	}
 
 	// Este método nos generará una contraseña dependiendo de la longitud que le
 	// indiquemos.
-	private static String GenerarContraseña(int num) {
+	private static String generarContraseña(int num) {
 
 		//
 		String caracter = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvxyz0123456789";
@@ -51,7 +51,7 @@ public class Password {
 	// En este método miramos si nos han mandado una longitud de contraseña superior
 	// a 0 (que se consideraria null) y en caso de que no sea superior utilizamos la
 	// longitud por defecto.
-	private static int ComprobarLongitud(int num) {
+	private static int comprobarLongitud(int num) {
 		if (num != 0) {
 			return num;
 		} else {

@@ -34,7 +34,7 @@ public class Persona {
 		// estamos llamando aquí para que nos mire si nos han introducido un valor o si
 		// se ha introducido un char vació por lo que necesitaremos usar el valor
 		// default.
-		this.sexo = ComprobarSexo(sexo);
+		this.sexo = comprobarSexo(sexo);
 
 	}
 
@@ -48,10 +48,10 @@ public class Persona {
 		this.altura = altura;
 
 		// Aqui estamos usando otra vez el metodo C
-		this.sexo = ComprobarSexo(sexo);
+		this.sexo = comprobarSexo(sexo);
 	}
 
-	private static char ComprobarSexo(char c) {
+	private static char comprobarSexo(char c) {
 
 		// Con este if estamos comprobando si nos han mandado un valor para el sexo o no
 		// y en caso de que nos hayan mandado un char vacío se introducirá el sexo de
