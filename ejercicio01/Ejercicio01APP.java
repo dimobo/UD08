@@ -17,13 +17,7 @@ public class Ejercicio01APP {
 		// por atributo como ha quedado.
 
 		for (int i = 0; i < arrayPersonas.length; i++) {
-			System.out.println("Datos Persona " + (i + 1));
-			System.out.println("Nombre: " + arrayPersonas[i].getNombre());
-			System.out.println("Edad: " + arrayPersonas[i].getEdad());
-			System.out.println("DNI: " + arrayPersonas[i].getDni());
-			System.out.println("Sexo: " + arrayPersonas[i].getSexo());
-			System.out.println("Peso: " + arrayPersonas[i].getPeso());
-			System.out.println("Altura: " + arrayPersonas[i].getAltura() + "\n");
+			System.out.println("Datos Persona " + (i + 1) + "\n" + arrayPersonas[i].toString());
 
 		}
 

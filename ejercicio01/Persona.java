@@ -69,6 +69,13 @@ public class Persona {
 
 	}
 
+	@Override
+	public String toString() {
+
+		return "Nombre: " + this.nombre + "\nEdad: " + this.edad + "\nDNI: " + this.dni + "\nSexo: " + this.sexo
+				+ "\nPeso: " + this.peso + "\nAltura: " + this.altura + "\n\n";
+	}
+
 	// Esta es la zona de getters y setters, se han generado de forma automática con
 	// el eclipse.
 	public String getNombre() {
