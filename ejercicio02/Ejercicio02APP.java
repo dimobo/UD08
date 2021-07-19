@@ -15,10 +15,8 @@ public class Ejercicio02APP {
 
 		// Este for nos mostrará por consola el contenido de los objetos.
 		for (int i = 0; i < arrayPasswords.length; i++) {
-			System.out.println("Password " + (i + 1));
-			System.out.println("Longitud: " + arrayPasswords[i].getLongitud());
-			System.out.println("Contraseña: " + arrayPasswords[i].getContraseña() + "\n");
+			System.out.println("Password " + (i + 1) + "\n" + arrayPasswords[i].toString());
 		}
-	}
 
+	}
 }

@@ -59,6 +59,11 @@ public class Password {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return "longitud: " + this.longitud + "\nContraseña: " + this.contraseña + "\n\n";
+	}
+
 	// Zona de getters y setters.
 	public int getLongitud() {
 		return longitud;
